@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-app
+spec:
+  replicas: 3   # Number of replica pods to maintain
+  selector:
+    matchLabels:
+      app: java-app   # Label selector for pods managed by this Deployment
+  template:
+    metadata:
+      labels:
+        app: java-app   # Labels applied to pods created by this Deployment
+    spec:
+      containers:
+        - name: java-container
+          image: himalaya7087/java-image   # Replace with your Java application Docker image
+          ports:
+            - containerPort: 8080         # Port that your Java application listens on
+          # Add any additional configuration here (e.g., environment variables, volumes)
+

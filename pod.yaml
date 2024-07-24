@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: java-pod
+  labels:
+    app: java-app
+spec:
+  containers:
+  - name: java-container
+    image: himalaya7087/java-image:latest
+    ports:
+    - containerPort: 8080
